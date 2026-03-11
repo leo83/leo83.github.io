@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lev Ragulin — AI / ML / LLM Solutions Leader</title>
+  <meta
+    name="description"
+    content="Personal brand page of Lev Ragulin — AI & ML solutions for business: LLM agents, RAG systems, recommendation and scoring engines, data and ML platforms."
+  />
+  <style>
+    :root {
+      --bg: #07111f;
+      --card: rgba(255,255,255,0.06);
+      --card-strong: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #eef4ff;
+      --muted: #b9c4e3;
+      --accent: #67e8f9;
+      --accent-2: #8b5cf6;
+      --shadow: 0 24px 70px rgba(0,0,0,0.38);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(103,232,249,0.16), transparent 28%),
+        radial-gradient(circle at 90% 8%, rgba(139,92,246,0.18), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(52,211,153,0.10), transparent 24%),
+        linear-gradient(180deg, #07111f 0%, #091427 50%, #08111f 100%);
+      line-height: 1.58;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: 0.92; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 17, 31, 0.70);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07111f;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.20);
+      overflow: hidden;
+      font-size: 12px;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .lang-btn {
+      padding: 6px 10px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+    }
+
+    .lang-btn.active {
+      background: rgba(255,255,255,0.12);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 52px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      position: relative;
+      overflow: hidden;
+      padding: 38px;
+      min-height: 520px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)),
+        radial-gradient(circle at 85% 18%, rgba(103,232,249,0.13), transparent 24%),
+        radial-gradient(circle at 92% 30%, rgba(139,92,246,0.14), transparent 20%);
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -90px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(103,232,249,0.16), transparent 66%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5.8vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 700;
+    }
+
+    .hero-text {
+      margin: 0 0 14px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 8px;
+      margin: 18px 0 0;
+    }
+
+    .hero-points div {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dfe7ff;
+      font-size: 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .hero-badges {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-badges span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: transform .18s ease, opacity .18s ease, background .18s ease;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      color: #07111f;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), #a5f3fc);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn-linkedin {
+      color: var(--text);
+      background: rgba(10, 102, 194, 0.18);
+      border-color: rgba(10, 102, 194, 0.40);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .photo-card {
+      padding: 16px;
+      overflow: hidden;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      background: #0f172a;
+    }
+
+    .side-panel {
+      padding: 22px;
+    }
+
+    .side-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--card-strong);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric-value {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .contact-item {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-item strong { color: var(--text); }
+
+    .section {
+      padding: 18px 0 30px;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 820px;
+      font-size: 15px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 20px;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(103,232,249,0.08);
+      border: 1px solid rgba(103,232,249,0.18);
+      color: #dcfbff;
+      font-size: 12px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      padding: 20px;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .timeline-meta {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .timeline-item p,
+    .timeline-item li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-item ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .footer {
+      padding: 30px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      margin-top: 8px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main,
+      .side-panel,
+      .info-card,
+      .timeline-item {
+        padding: 22px;
+      }
+
+      .photo-card {
+        order: -1;
+      }
+
+      .profile-photo {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+
+      .profile-photo {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body class="lang-en">
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge">LR</div>
+        <div>Lev Ragulin</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about" data-i18n="nav-about">About</a>
+        <a href="#focus" data-i18n="nav-focus">AI / ML expertise</a>
+        <a href="#experience" data-i18n="nav-exp">Experience</a>
+        <a href="#contacts" data-i18n="nav-contacts">Contacts</a>
+        <a href="https://theactions.ai" target="_blank" rel="noopener noreferrer">theactions.ai</a>
+        <a href="https://dataholic.ru" target="_blank" rel="noopener noreferrer">dataholic.ru</a>
+        <a href="https://www.linkedin.com/in/lev-ragulin-b1688189" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="card hero-main">
+          <div class="eyebrow" data-i18n="eyebrow">
+            AI Solutions • LLM Agents • RAG • Recommender Systems • ML Platforms
+          </div>
+          <h1 data-i18n="hero-name">Lev Ragulin</h1>
+          <p class="hero-subtitle" data-i18n="hero-subtitle">
+            AI / ML Leader • Founder / CEO / CTO • Executive in Data &amp; Platforms
+          </p>
+          <p class="hero-text" data-i18n="hero-p1">
+            I help businesses implement AI and ML solutions that deliver measurable impact:
+            LLM agents to automate processes, RAG systems for enterprise knowledge, recommendation engines,
+            scoring models, and platforms for running machine learning in production.
+          </p>
+          <p class="hero-text" data-i18n="hero-p2">
+            My background combines AI/ML delivery, platform engineering, enterprise architecture
+            and deep data expertise. This allows me not only to design AI use cases but to bring
+            them to production with the right infrastructure, SLAs, cost model, scalability and team processes.
+          </p>
+
+          <div class="hero-points">
+            <div data-i18n="hero-point-1">LLM agents for business and SOP automation</div>
+            <div data-i18n="hero-point-2">RAG systems and corporate knowledge access</div>
+            <div data-i18n="hero-point-3">Recommender, scoring and ML solutions for real business tasks</div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://theactions.ai" target="_blank" rel="noopener noreferrer" data-i18n="cta-actions">
+              Go to theactions.ai
+            </a>
+            <a class="btn btn-secondary" href="https://dataholic.ru" target="_blank" rel="noopener noreferrer" data-i18n="cta-dataholic">
+              Go to dataholic.ru
+            </a>
+            <a class="btn btn-linkedin" href="https://www.linkedin.com/in/lev-ragulin-b1688189" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <span data-i18n="badge-1">Advisory on AI / ML and architecture</span>
+            <span data-i18n="badge-2">Launching and scaling AI products</span>
+            <span data-i18n="badge-3">Leadership: C‑level, product &amp; tech</span>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <div class="card photo-card">
+            <img
+              src="DSC06476.jpg"
+              alt="Lev Ragulin"
+              class="profile-photo"
+            />
+          </div>
+
+          <div class="card side-panel">
+            <p class="side-title" data-i18n="side-title">Key numbers</p>
+
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="metric-value" data-i18n="m1-v">22+</div>
+                <div class="metric-label" data-i18n="m1-l">years in IT, AI, ML, Data &amp; Architecture</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" data-i18n="m2-v">60+</div>
+                <div class="metric-label" data-i18n="m2-l">people led at platform / unit level</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" data-i18n="m3-v">10+</div>
+                <div class="metric-label" data-i18n="m3-l">launched projects</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value" data-i18n="m4-v">AI / ML for industries</div>
+                <div class="metric-label" data-i18n="m4-l">Fintech, e‑com, travel‑tech, retail, banking</div>
+              </div>
+            </div>
+
+            <div class="contact-list">
+              <div class="contact-item"><strong data-i18n="loc-label">Location:</strong> <span data-i18n="loc-val">Moscow</span></div>
+              <div class="contact-item"><strong>Email:</strong> <a href="mailto:Lev.Ragulin@mail.ru">Lev.Ragulin@mail.ru</a></div>
+              <div class="contact-item"><strong data-i18n="phone-label">Phone:</strong> <a href="tel:+79605180010">+7 (960) 518-00-10</a></div>
+              <div class="contact-item"><strong>Telegram:</strong> <a href="https://t.me/lev_rg" target="_blank" rel="noopener noreferrer">@lev_rg</a></div>
+              <div class="contact-item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lev-ragulin-b1688189" target="_blank" rel="noopener noreferrer">lev-ragulin-b1688189</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="about-title">About</h2>
+        <p class="section-lead" data-i18n="about-lead">
+          I am an executive-level leader focused on implementing AI and ML solutions for business,
+          and on building the technology foundations required to run them reliably in production.
+          My background spans applied AI, ML platforms, Big Data, DWH, BI and leading strong engineering teams.
+        </p>
+
+        <div class="grid-3">
+          <article class="info-card">
+            <h3 data-i18n="about-f1-title">Primary focus</h3>
+            <p data-i18n="about-f1-text">
+              Delivering AI/ML solutions with real business impact: LLM agents, RAG, recommendation engines,
+              scoring, intelligent automation and applied ML services.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="about-f2-title">How I work</h3>
+            <p data-i18n="about-f2-text">
+              I connect business goals, architecture, infrastructure, delivery and teams into a single
+              execution loop that brings AI initiatives from idea to production.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="about-f3-title">Engineering foundation</h3>
+            <p data-i18n="about-f3-text">
+              Behind AI use cases there is a solid foundation in data platforms, high‑load systems,
+              cloud, enterprise architecture and full lifecycle of complex platforms.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="focus-title">AI / ML expertise</h2>
+        <p class="section-lead" data-i18n="focus-lead">
+          Key domains where I have deep leadership and architectural experience.
+        </p>
+
+        <div class="info-card">
+          <div class="pill-row">
+            <span class="pill">LLM Agents</span>
+            <span class="pill">AI Agents for Business</span>
+            <span class="pill">RAG Systems</span>
+            <span class="pill">Recommendation Systems</span>
+            <span class="pill">Scoring Systems</span>
+            <span class="pill">ML Platforms</span>
+            <span class="pill">Model Inference</span>
+            <span class="pill">Deep Learning on GPU</span>
+            <span class="pill">Cloud AI Infrastructure</span>
+            <span class="pill">MLOps Tooling</span>
+            <span class="pill">Big Data</span>
+            <span class="pill">BI &amp; Analytics</span>
+            <span class="pill">DWH Architecture</span>
+            <span class="pill">Data Governance</span>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 18px;">
+          <article class="info-card">
+            <h3 data-i18n="stack-title">Technology stack</h3>
+            <p data-i18n="stack-text">
+              Python, LangChain, OpenAI, GPU, cloud infrastructure, model inference, ML/Ops,
+              Kubernetes, Hadoop, Spark, Cassandra, Kafka, Airflow, Greenplum, Oracle, SAP BW on Hana,
+              BI and analytics platforms.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="industries-title">Industry context</h3>
+            <p data-i18n="industries-text">
+              Fintech, e‑commerce, travel‑tech, retail, banking, cloud platforms and enterprise
+              environments where AI/ML solutions must be not only smart but reliable, scalable and cost‑efficient.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="exp-title">Experience</h2>
+        <p class="section-lead" data-i18n="exp-lead">
+          Selected roles that best reflect my profile as a leader in AI/ML solutions and platforms.
+        </p>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3 data-i18n="exp1-title">dataholic.ru / theactions.ai — Founder / CEO / CTO</h3>
+            <div class="timeline-meta" data-i18n="exp1-time">Feb 2024 — present</div>
+            <p data-i18n="exp1-p">
+              Leading the launch of a platform for building and running AI agents, and a recommendation
+              systems platform for real‑world business use cases.
+            </p>
+            <ul>
+              <li data-i18n="exp1-li1">Focus on AI agents and automation of business processes</li>
+              <li data-i18n="exp1-li2">Recommendation systems as a separate product track</li>
+              <li data-i18n="exp1-li3">Projects delivered for real clients and use cases</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <h3 data-i18n="exp2-title">Cloud.ru — Head of Platform Unit AI Cloud</h3>
+            <div class="timeline-meta" data-i18n="exp2-time">Nov 2022 — Oct 2023</div>
+            <p data-i18n="exp2-p">
+              Managing a 60+ people team and developing a cloud ML platform end‑to‑end:
+              deep learning on GPU, distributed training, model inference on GPU/CPU, ML/Ops tooling,
+              high‑load support, SLAs and throughput optimization.
+            </p>
+            <ul>
+              <li data-i18n="exp2-li1">New platform features, including model inference capabilities</li>
+              <li data-i18n="exp2-li2">Platform stabilization and production processes setup</li>
+              <li data-i18n="exp2-li3">Three‑year growth and development strategy for the platform</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <h3 data-i18n="exp3-title">OneFactor — Head of ML Platform and Cloud Solutions</h3>
+            <div class="timeline-meta" data-i18n="exp3-time">Jul 2019 — Nov 2022</div>
+            <p data-i18n="exp3-p">
+              Leading three development and DevOps teams, evolving the ML platform architecture
+              to meet business requirements, ensuring SLAs and managing infrastructure costs.
+            </p>
+            <ul>
+              <li data-i18n="exp3-li1">Functional leadership of about 30 specialists</li>
+              <li data-i18n="exp3-li2">Developing cloud and ML platform capabilities</li>
+              <li data-i18n="exp3-li3">Stack: Hadoop, Spark, Cassandra, Kubernetes, Kafka, Luigi</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <h3 data-i18n="exp4-title">Data, Big Data and BI as a foundation</h3>
+            <div class="timeline-meta" data-i18n="exp4-time">X5 Group • Home Credit • BNP Paribas Vostok</div>
+            <p data-i18n="exp4-p">
+              My AI/ML profile is grounded in extensive hands‑on experience with data platforms,
+              Big Data, ETL, DWH, BI, enterprise architecture, Oracle and high‑availability systems.
+            </p>
+            <ul>
+              <li data-i18n="exp4-li1">X5 Group: data management strategy, new DWH platform launched in 8 months</li>
+              <li data-i18n="exp4-li2">Home Credit: big data platform architecture and internal competence center</li>
+              <li data-i18n="exp4-li3">Banking and enterprise experience in business‑critical systems</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="contacts-title">Contacts</h2>
+        <p class="section-lead" data-i18n="contacts-lead">
+          Open for conversations on AI strategy, LLM/ML implementation, advisory roles, leadership positions and partnerships.
+        </p>
+
+        <div class="grid-3">
+          <div class="info-card">
+            <h3>Email</h3>
+            <p><a href="mailto:Lev.Ragulin@mail.ru">Lev.Ragulin@mail.ru</a></p>
+          </div>
+          <div class="info-card">
+            <h3>Telegram</h3>
+            <p><a href="https://t.me/lev_rg" target="_blank" rel="noopener noreferrer">@lev_rg</a></p>
+          </div>
+          <div class="info-card">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/lev-ragulin-b1688189" target="_blank" rel="noopener noreferrer">lev-ragulin-b1688189</a></p>
+          </div>
+          <div class="info-card">
+            <h3 data-i18n="contacts-phone-title">Phone</h3>
+            <p><a href="tel:+79605180010">+7 (960) 518-00-10</a></p>
+          </div>
+          <div class="info-card">
+            <h3>Web</h3>
+            <p>
+              <a href="https://theactions.ai" target="_blank" rel="noopener noreferrer">theactions.ai</a><br />
+              <a href="https://dataholic.ru" target="_blank" rel="noopener noreferrer">dataholic.ru</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span data-i18n="footer-text">
+        Personal brand page of Lev Ragulin — AI / ML / LLM / Data Platforms / Executive Leadership.
+      </span>
+      <span>
+        <a href="https://theactions.ai" target="_blank" rel="noopener noreferrer">theactions.ai</a> ·
+        <a href="https://dataholic.ru" target="_blank" rel="noopener noreferrer">dataholic.ru</a> ·
+        <a href="https://www.linkedin.com/in/lev-ragulin-b1688189" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+  const translations = {
+    en: {
+      'nav-about': 'About',
+      'nav-focus': 'AI / ML expertise',
+      'nav-exp': 'Experience',
+      'nav-contacts': 'Contacts',
+      'eyebrow': 'AI Solutions • LLM Agents • RAG • Recommender Systems • ML Platforms',
+      'hero-name': 'Lev Ragulin',
+      'hero-subtitle': 'AI / ML Leader • Founder / CEO / CTO • Executive in Data & Platforms',
+      'hero-p1': 'I help businesses implement AI and ML solutions that deliver measurable impact: LLM agents to automate processes, RAG systems for enterprise knowledge, recommendation engines, scoring models, and platforms for running machine learning in production.',
+      'hero-p2': 'My background combines AI/ML delivery, platform engineering, enterprise architecture and deep data expertise. This allows me not only to design AI use cases but to bring them to production with the right infrastructure, SLAs, cost model, scalability and team processes.',
+      'hero-point-1': 'LLM agents for business and SOP automation',
+      'hero-point-2': 'RAG systems and corporate knowledge access',
+      'hero-point-3': 'Recommender, scoring and ML solutions for real business tasks',
+      'cta-actions': 'Go to theactions.ai',
+      'cta-dataholic': 'Go to dataholic.ru',
+      'badge-1': 'Advisory on AI / ML and architecture',
+      'badge-2': 'Launching and scaling AI products',
+      'badge-3': 'Leadership: C‑level, product & tech',
+      'side-title': 'Key numbers',
+      'm1-v': '22+',
+      'm2-v': '60+',
+      'm3-v': '10+',
+      'm4-v': 'AI / ML for industries',
+      'm1-l': 'years in IT, AI, ML, Data & Architecture',
+      'm2-l': 'people led at platform / unit level',
+      'm3-l': 'launched projects',
+      'm4-l': 'Fintech, e‑com, travel‑tech, retail, banking',
+      'loc-label': 'Location:',
+      'loc-val': 'Moscow',
+      'phone-label': 'Phone:',
+      'about-title': 'About',
+      'about-lead': 'I am an executive-level leader focused on implementing AI and ML solutions for business, and on building the technology foundations required to run them reliably in production. My background spans applied AI, ML platforms, Big Data, DWH, BI and leading strong engineering teams.',
+      'about-f1-title': 'Primary focus',
+      'about-f1-text': 'Delivering AI/ML solutions with real business impact: LLM agents, RAG, recommendation engines, scoring, intelligent automation and applied ML services.',
+      'about-f2-title': 'How I work',
+      'about-f2-text': 'I connect business goals, architecture, infrastructure, delivery and teams into a single execution loop that brings AI initiatives from idea to production.',
+      'about-f3-title': 'Engineering foundation',
+      'about-f3-text': 'Behind AI use cases there is a solid foundation in data platforms, high‑load systems, cloud, enterprise architecture and full lifecycle of complex platforms.',
+      'focus-title': 'AI / ML expertise',
+      'focus-lead': 'Key domains where I have deep leadership and architectural experience.',
+      'stack-title': 'Technology stack',
+      'stack-text': 'Python, LangChain, OpenAI, GPU, cloud infrastructure, model inference, ML/Ops, Kubernetes, Hadoop, Spark, Cassandra, Kafka, Airflow, Greenplum, Oracle, SAP BW on Hana, BI and analytics platforms.',
+      'industries-title': 'Industry context',
+      'industries-text': 'Fintech, e‑commerce, travel‑tech, retail, banking, cloud platforms and enterprise environments where AI/ML solutions must be not only smart but reliable, scalable and cost‑efficient.',
+      'exp-title': 'Experience',
+      'exp-lead': 'Selected roles that best reflect my profile as a leader in AI/ML solutions and platforms.',
+      'exp1-title': 'dataholic.ru / theactions.ai — Founder / CEO / CTO',
+      'exp1-time': 'Feb 2024 — present',
+      'exp1-p': 'Leading the launch of a platform for building and running AI agents, and a recommendation systems platform for real‑world business use cases.',
+      'exp1-li1': 'Focus on AI agents and automation of business processes',
+      'exp1-li2': 'Recommendation systems as a separate product track',
+      'exp1-li3': 'Projects delivered for real clients and use cases',
+      'exp2-title': 'Cloud.ru — Head of Platform Unit AI Cloud',
+      'exp2-time': 'Nov 2022 — Oct 2023',
+      'exp2-p': 'Managing a 60+ people team and developing a cloud ML platform end‑to‑end: deep learning on GPU, distributed training, model inference on GPU/CPU, ML/Ops tooling, high‑load support, SLAs and throughput optimization.',
+      'exp2-li1': 'New platform features, including model inference capabilities',
+      'exp2-li2': 'Platform stabilization and production processes setup',
+      'exp2-li3': 'Three‑year growth and development strategy for the platform',
+      'exp3-title': 'OneFactor — Head of ML Platform and Cloud Solutions',
+      'exp3-time': 'Jul 2019 — Nov 2022',
+      'exp3-p': 'Leading three development and DevOps teams, evolving the ML platform architecture to meet business requirements, ensuring SLAs and managing infrastructure costs.',
+      'exp3-li1': 'Functional leadership of about 30 specialists',
+      'exp3-li2': 'Developing cloud and ML platform capabilities',
+      'exp3-li3': 'Stack: Hadoop, Spark, Cassandra, Kubernetes, Kafka, Luigi',
+      'exp4-title': 'Data, Big Data and BI as a foundation',
+      'exp4-time': 'X5 Group • Home Credit • BNP Paribas Vostok',
+      'exp4-p': 'My AI/ML profile is grounded in extensive hands‑on experience with data platforms, Big Data, ETL, DWH, BI, enterprise architecture, Oracle and high‑availability systems.',
+      'exp4-li1': 'X5 Group: data management strategy, new DWH platform launched in 8 months',
+      'exp4-li2': 'Home Credit: big data platform architecture and internal competence center',
+      'exp4-li3': 'Banking and enterprise experience in business‑critical systems',
+      'contacts-title': 'Contacts',
+      'contacts-lead': 'Open for conversations on AI strategy, LLM/ML implementation, advisory roles, leadership positions and partnerships.',
+      'contacts-phone-title': 'Phone',
+      'footer-text': 'Personal brand page of Lev Ragulin — AI / ML / LLM / Data Platforms / Executive Leadership.'
+    },
+    ru: {
+      'nav-about': 'Обо мне',
+      'nav-focus': 'AI / ML экспертиза',
+      'nav-exp': 'Опыт',
+      'nav-contacts': 'Контакты',
+      'eyebrow': 'AI‑решения • LLM‑агенты • RAG • Рекомендательные системы • ML‑платформы',
+      'hero-name': 'Лев Рагулин',
+      'hero-subtitle': 'AI / ML Leader • Founder / CEO / CTO • Executive в Data & Platforms',
+      'hero-p1': 'Я помогаю бизнесу внедрять AI и ML‑решения, которые дают прикладной эффект: LLM‑агенты для автоматизации процессов, RAG‑системы для корпоративных знаний, рекомендательные механики, скоринговые модели и платформы для промышленного использования машинного обучения.',
+      'hero-p2': 'Моя база — сочетание AI/ML‑delivery, platform engineering, enterprise‑архитектуры и сильной data‑экспертизы. Поэтому я умею не только придумать AI‑кейс, но и довести его до production с учётом инфраструктуры, SLA, стоимости, масштаба и процессов команды.',
+      'hero-point-1': 'LLM‑агенты для бизнеса и автоматизации SOP',
+      'hero-point-2': 'RAG‑системы и корпоративный доступ к знаниям',
+      'hero-point-3': 'Рекомендательные, скоринговые и ML‑решения для прикладных задач',
+      'cta-actions': 'Перейти на theactions.ai',
+      'cta-dataholic': 'Перейти на dataholic.ru',
+      'badge-1': 'Advisory по AI / ML и архитектуре',
+      'badge-2': 'Запуск и масштабирование AI‑продуктов',
+      'badge-3': 'Leadership: C‑level, product & tech',
+      'side-title': 'Ключевые цифры',
+      'm1-v': '22+',
+      'm2-v': '60+',
+      'm3-v': '10+',
+      'm4-v': 'AI / ML для отраслей',
+      'm1-l': 'лет опыта в IT, AI, ML, Data и Architecture',
+      'm2-l': 'человек в управлении на платформенном уровне',
+      'm3-l': 'запущенных проектов',
+      'm4-l': 'Fintech, e‑com, travel‑tech, retail, banking',
+      'loc-label': 'Локация:',
+      'loc-val': 'Москва',
+      'phone-label': 'Телефон:',
+      'about-title': 'Обо мне',
+      'about-lead': 'Я executive‑level лидер, специализирующийся на внедрении AI и ML‑решений для бизнеса и построении технологической базы, необходимой для их устойчивой работы в production. Мой опыт охватывает прикладной AI, ML‑платформы, Big Data, DWH, BI и управление сильными инженерными командами.',
+      'about-f1-title': 'Основной фокус',
+      'about-f1-text': 'Внедрение AI/ML‑решений с бизнес‑эффектом: LLM‑агенты, RAG, рекомендательные системы, скоринг, интеллектуальная автоматизация и прикладные ML‑сервисы.',
+      'about-f2-title': 'Как я работаю',
+      'about-f2-text': 'Соединяю бизнес‑цели, архитектуру, инфраструктуру, delivery и команду в единый контур, который приводит решение от идеи до production.',
+      'about-f3-title': 'Инженерная база',
+      'about-f3-text': 'За AI‑кейсами стоит фундамент в платформах данных, high‑load‑системах, облаках, enterprise‑архитектуре и полном жизненном цикле сложных платформ.',
+      'focus-title': 'AI / ML экспертиза',
+      'focus-lead': 'Ключевые направления, в которых у меня глубокий управленческий и архитектурный опыт.',
+      'stack-title': 'Технологический стек',
+      'stack-text': 'Python, LangChain, OpenAI, GPU, cloud infrastructure, model inference, ML/Ops, Kubernetes, Hadoop, Spark, Cassandra, Kafka, Airflow, Greenplum, Oracle, SAP BW on Hana, BI и аналитические платформы.',
+      'industries-title': 'Отраслевой контекст',
+      'industries-text': 'Fintech, e‑commerce, travel‑tech, retail, banking, cloud‑платформы и enterprise‑среда, где AI/ML‑решения должны быть надёжными, масштабируемыми и экономически оправданными.',
+      'exp-title': 'Опыт',
+      'exp-lead': 'Роли, которые лучше всего отражают мой профиль лидера по AI/ML‑решениям и платформам.',
+      'exp1-title': 'dataholic.ru / theactions.ai — Founder / CEO / CTO',
+      'exp1-time': 'Февраль 2024 — настоящее время',
+      'exp1-p': 'Запуск вместе с командой платформы для создания и запуска AI‑агентов, а также платформы рекомендательных систем для прикладного использования в бизнесе.',
+      'exp1-li1': 'Фокус на AI‑агентах и автоматизации бизнес‑процессов',
+      'exp1-li2': 'Развитие recommendation‑systems как отдельного продуктового трека',
+      'exp1-li3': 'Запущенные проекты и работа с реальными клиентскими задачами',
+      'exp2-title': 'Cloud.ru — Head of Platform Unit AI Cloud',
+      'exp2-time': 'Ноябрь 2022 — Октябрь 2023',
+      'exp2-p': 'Управление командой 60+ человек и развитие cloud ML‑platform с полным циклом: deep learning на GPU, distributed training, model inference на GPU/CPU, ML/Ops‑tooling, high‑load support, SLA и throughput‑optimization.',
+      'exp2-li1': 'Запуск новых платформенных возможностей, включая model inference',
+      'exp2-li2': 'Стабилизация платформы и выстраивание production‑процессов',
+      'exp2-li3': 'Формирование трёхлетней стратегии роста платформы',
+      'exp3-title': 'OneFactor — Head of ML Platform and Cloud Solutions',
+      'exp3-time': 'Июль 2019 — Ноябрь 2022',
+      'exp3-p': 'Управление тремя командами разработки и DevOps, развитие архитектуры ML‑платформы под бизнес‑требования, обеспечение SLA и контроль стоимости инфраструктуры.',
+      'exp3-li1': 'Функциональное управление ~30 специалистами',
+      'exp3-li2': 'Развитие cloud и ML‑platform capabilities',
+      'exp3-li3': 'Стек: Hadoop, Spark, Cassandra, Kubernetes, Kafka, Luigi',
+      'exp4-title': 'Данные, Big Data и BI как фундамент',
+      'exp4-time': 'X5 Group • Home Credit • BNP Paribas Vostok',
+      'exp4-p': 'AI/ML‑профиль опирается на многолетний опыт в data‑platforms, Big Data, ETL, DWH, BI, enterprise‑архитектуре, Oracle и high‑availability‑системах.',
+      'exp4-li1': 'X5 Group: стратегия data‑management, запуск новой DWH за 8 месяцев',
+      'exp4-li2': 'Home Credit: big‑data‑платформа и внутренний центр компетенций',
+      'exp4-li3': 'Банковский и enterprise‑опыт в бизнес‑критичных системах',
+      'contacts-title': 'Контакты',
+      'contacts-lead': 'Открыт к диалогу по AI‑стратегии, внедрению LLM/ML‑решений, advisory‑ролям, leadership‑позициям и партнёрствам.',
+      'contacts-phone-title': 'Телефон',
+      'footer-text': 'Personal brand page of Lev Ragulin — AI / ML / LLM / Data Platforms / Executive Leadership.'
+    }
+  };
+
+  let currentLang = 'en';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    
+    // Update body class
+    document.body.classList.remove('lang-ru', 'lang-en');
+    document.body.classList.add('lang-' + lang);
+
+    // Update all translatable elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+
+    // Update toggle buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    setLanguage('en');
+
+    document.querySelector('.lang-toggle').addEventListener('click', function(e) {
+      const btn = e.target.closest('.lang-btn');
+      if (btn) {
+        const lang = btn.getAttribute('data-lang');
+        if (lang) setLanguage(lang);
+      }
+    });
+  });
+</script>
+</body>
+</html>
